@@ -1,0 +1,24 @@
+package cfranc.com.comics.collector.ws.dto;
+
+public class AlbumShortDTO {
+
+    private String albumName;
+    private String genresName;
+    private String title;
+    private String genre;
+
+    public  AlbumShortDTO(String title, String genre) {
+        super();
+        this.title = title;
+        this.genre = genre;
+    }
+
+    public AlbumShortDTO (String albumName, String genreName, String title, String genre) {
+        super();
+        this.albumName = albumName;
+        this.genresName = genreName;
+        this.title = title;
+        this.genre = genre;
+    }
+
+}
