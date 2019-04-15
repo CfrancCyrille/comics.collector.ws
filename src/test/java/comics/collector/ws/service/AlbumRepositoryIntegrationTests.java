@@ -32,7 +32,11 @@ import comics.collector.ws.SampleDataRestApplication;
 import comics.collector.ws.domain.Album;
 import comics.collector.ws.service.AlbumRepository;
 
-
+/**
+ * Integration tests for {@link CityRepository}.
+ * 
+ * @author Oliver Gierke
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SampleDataRestApplication.class)
 public class AlbumRepositoryIntegrationTests {
