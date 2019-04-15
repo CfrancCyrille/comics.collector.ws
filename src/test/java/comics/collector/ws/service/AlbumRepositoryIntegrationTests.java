@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package web.jax.rs.data.jpa.service;
+package comics.collector.ws.service;
 
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
@@ -28,14 +28,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import web.jax.rs.data.jpa.SampleDataRestApplication;
-import web.jax.rs.data.jpa.domain.Album;
+import comics.collector.ws.SampleDataRestApplication;
+import comics.collector.ws.domain.Album;
+import comics.collector.ws.service.AlbumRepository;
 
-/**
- * Integration tests for {@link CityRepository}.
- * 
- * @author Oliver Gierke
- */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SampleDataRestApplication.class)
 public class AlbumRepositoryIntegrationTests {

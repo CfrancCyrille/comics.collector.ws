@@ -1,4 +1,4 @@
-package web.jax.rs.data.jpa.domain;
+package comics.collector.ws.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;

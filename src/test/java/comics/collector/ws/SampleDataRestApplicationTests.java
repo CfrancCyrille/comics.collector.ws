@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package web.jax.rs.data.jpa;
+package comics.collector.ws;
 
 import org.junit.Before;
 import org.junit.Test;

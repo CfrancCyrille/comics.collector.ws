@@ -1,9 +1,9 @@
-package web.jax.rs.data.jpa.service;
+package comics.collector.ws.service;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
-import web.jax.rs.data.jpa.domain.Genre;
+import comics.collector.ws.domain.Genre;
 
 @Repository
 public interface GenreRepository extends PagingAndSortingRepository<Genre, Integer>{

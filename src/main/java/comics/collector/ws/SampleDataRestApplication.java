@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package web.jax.rs.data.jpa;
+package comics.collector.ws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
