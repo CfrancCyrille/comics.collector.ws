@@ -1,0 +1,23 @@
+package cfranc.com.comics.collector.ws.dto;
+
+public class AlbumShortDTO2 {
+
+    private String scenaristName;
+    private String cartoonistName;
+    private String title;
+    private String serie;
+
+    public AlbumShortDTO2(String title, String serie) {
+        super();
+        this.title = title;
+        this.serie = serie;
+    }
+
+     public AlbumShortDTO2(String scenaristName, String cartoonistName, String title, String serie) {
+         super();
+         this.scenaristName = scenaristName;
+         this.cartoonistName = cartoonistName;
+         this.title = title;
+         this.serie = serie;
+     }
+}
