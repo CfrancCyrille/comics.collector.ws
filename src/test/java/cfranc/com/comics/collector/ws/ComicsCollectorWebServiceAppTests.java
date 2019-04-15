@@ -16,22 +16,41 @@
 
 package cfranc.com.comics.collector.ws;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
+
+import javax.persistence.Query;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import cfranc.com.comics.collector.ws.dto.AlbumShortDTO;
+import cfranc.com.comics.collector.ws.model.Album;
 
 /**
  * Integration test to run the application.
  * 
  * @author Oliver Gierke
  */
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
+@ContextConfiguration(locations = "classpath:test-app-context.xml")
 @SpringBootTest
 // Separate profile for web tests to avoid clashing databases
 public class ComicsCollectorWebServiceAppTests {
 
-	@Test
-	public void contextLoads() {
-	}
+	@Autowired
+	private TestEntityManager em;
+	
+	/*
+		@Test
+		public void contextLoads() {
+		}
+	*/
+	
 }
