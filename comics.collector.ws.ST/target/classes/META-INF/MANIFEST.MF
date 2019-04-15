@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Comics Collector
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: samyt
+Implementation-Vendor-Id: cfranc.com
+Build-Jdk: 1.8.0_201
+Implementation-URL: http://www.ateno-tech.com/apps/comics.collector.ws
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Ateno Tech
+
