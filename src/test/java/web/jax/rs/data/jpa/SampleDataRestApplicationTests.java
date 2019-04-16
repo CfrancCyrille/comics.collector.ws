@@ -93,7 +93,7 @@ public class SampleDataRestApplicationTests {
 		
 		Query q = em.getEntityManager().createQuery("SELECT new dto.AlbumShortDTO(a.titreAlbum, s.titreSerie) FROM Album a JOIN a.serie s where "
 				+ "(SELECT ap.personne.prenom FROM Albumpersonne ap JOIN ap.album a2 " + 
-				"			WHERE a2 = a AND ap.metier.libelleMetier = 'Dessin') = 'Uderzo' OR "
+				"			WHERE a2 = a AND ap.metier.libelleMetier = 'Dessin') = 'Uderzo' AND "
 				+ "(SELECT ap.personne.prenom FROM Albumpersonne ap JOIN ap.album a2 " + 
 				"			WHERE a2 = a AND ap.metier.libelleMetier = 'Scenario') = 'Goscinny' ");
 	
@@ -103,7 +103,7 @@ public class SampleDataRestApplicationTests {
 		
 		List<Album> r = q.getResultList();
 		
-		Integer expected = 15;
+		Integer expected = 9;
 		Integer actual = r.size();
 		assertEquals(expected, actual);
 		
