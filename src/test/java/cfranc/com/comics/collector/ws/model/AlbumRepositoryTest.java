@@ -68,7 +68,8 @@ public class AlbumRepositoryTest {
   @Test
   public void test_getCouple_Asterix_UderzoGoscinny()
  {
-	  Query q = em.getEntityManager().createQuery("SELECT NEW cfranc.com.comics.collector.ws.dto.AlbumShortDTO((SELECT ap.personne.nomUsuel FROM Albumpersonne ap JOIN ap.album a2 WHERE a2 = a AND ap.metier.libelleMetier = 'Scenario'),(SELECT ap.personne.nomUsuel FROM Albumpersonne ap JOIN ap.album a2 WHERE a2 = a AND ap.metier.libelleMetier = 'Dessin'),a.titreAlbum, s.titreSerie)FROM Album a LEFT JOIN a.serie s WHERE a.titreAlbum LIKE :titreAlbum ");
+	  Query q = em.getEntityManager().createQuery("SELECT NEW "
+	  		+ "cfranc.com.comics.collector.ws.dto.AlbumShortDTO((SELECT ap.personne.nomUsuel FROM Albumpersonne ap JOIN ap.album a2 WHERE a2 = a AND ap.metier.libelleMetier = 'Scenario'),(SELECT ap.personne.nomUsuel FROM Albumpersonne ap JOIN ap.album a2 WHERE a2 = a AND ap.metier.libelleMetier = 'Dessin'),a.titreAlbum, s.titreSerie)FROM Album a LEFT JOIN a.serie s WHERE a.titreAlbum LIKE :titreAlbum ");
 	  q.setParameter("titreAlbum", "Astérix%");
 	  q.setParameter("nomUsuel", "%Uderzo%");
 	  q.setParameter("nomUsuel", "%Goscinny%");
