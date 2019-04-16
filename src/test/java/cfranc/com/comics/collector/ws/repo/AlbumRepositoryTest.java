@@ -63,17 +63,39 @@ public class AlbumRepositoryTest {
 	
 	@Test
 	public void getCouple_Asterix_UderzoGoscinny(){
+		/*
 		Query q = (Query) em.getEntityManager().createQuery("SELECT NEW cfranc.com.comics.collector.ws.dto.AlbumShortDTO(\r\n" + 
-				"(SELECT ap.personne.nomUsuel FROM Albumpersonne ap JOIN ap.album a2\r\n" + 
-				"WHERE a2 = a AND ap.metier.libelleMetier = 'Scenario'),\r\n" + 
-				"(SELECT ap.personne.nomUsuel FROM Albumpersonne ap JOIN ap.album a2\r\n" + 
-				"WHERE a2 = a AND ap.metier.libelleMetier = 'Dessin'),\r\n" + 
+				
+				"(SELECT ap.metier.libelleMetier FROM Albumpersonne ap JOIN personne.nomUsuel a2\r\n" + 
+				"WHERE a2 = 'Goscinny' AND ap = 'Scenario'),\r\n" + 
+				
+				"(SELECT ap.metier.libelleMetier FROM Albumpersonne ap JOIN personne.nomUsuel a2\r\n" + 
+				"WHERE a2 = 'Uderzo' AND ap = 'Dessin'),\r\n" + 
+
 				"a.titreAlbum, s.titreSerie)\r\n" + 
 				"FROM Album a\r\n" + 
 				"LEFT JOIN a.serie s");
+		*/
+		Query q = (Query) em.getEntityManager().createQuery("SELECT NEW cfranc.com.comics.collector.ws.dto.AlbumShortDTO(\r\n" + 
+		"(SELECT titre_album , ID_ALBUM from ALBUM where ID_SERIE IN  ( \r\n" +
+		"     SELECT ID_SERIE FROM SERIE where ID_SERIE =  3 AND ID_ALBUM IN( \r\n" +
+		"         SELECT ID_ALBUM FROM ALBUMPERSONNE WHERE ALBUMPERSONNE.ID_ALBUM = ALBUM.ID_ALBUM \r\n" +
+		"         AND ID_PERSONNE IN(5,6)) \r\n" +
+		"     ) \r\n" +
+		")");
+		
+		
+		/* TEST SQL
+			SELECT titre_album , ID_ALBUM from ALBUM where ID_SERIE IN  (
+			     SELECT ID_SERIE FROM SERIE where ID_SERIE =  3 AND ID_ALBUM IN( 
+			         SELECT ID_ALBUM FROM ALBUMPERSONNE WHERE ALBUMPERSONNE.ID_ALBUM = ALBUM.ID_ALBUM 
+			         AND ID_PERSONNE IN(5,6)
+			     )
+			)
+		 */
 		
 		List<AlbumShortDTO> r =  q.getResultList();
-		int expected = 207;
+		int expected = 7;
 		int actual = r.size();
 		assertEquals(expected, actual);
 	}
